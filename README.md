@@ -1,93 +1,136 @@
-# 🏬 UrbanEase Store Management & Analytics System
+# 🏙️ UrbanEase Store Analytics
 
-A comprehensive **store management and performance analysis system** built in C++.  
-This project simulates a multi-store retail network, generating products, employees, and sales data automatically — then ranks stores by performance, forecasts future sales, and saves all reports in external files.  
-
-It demonstrates **object-oriented programming, data analytics, file handling, and forecasting algorithms** in C++.
+**A Data-Driven Store Management and Analytics System**  
+Built in **C++**, this console-based software simulates and analyzes retail store performance using data generation, clustering, forecasting, and ranking methods.
 
 ---
 
-## 📖 About
-**UrbanEase** is a console-based management system that automates store operations and analytics.  
-It can:
-- Generate random store, employee, and sales data
-- Forecast future sales using moving averages
-- Rank stores based on performance (profit, sales, cost)
-- Update existing store details
-- Save reports to text files for record-keeping
+## 📘 Overview
+
+UrbanEase Store Analytics is a **console-based C++ application** that simulates a network of retail stores and provides insights into their performance.  
+It leverages **data generation**, **K-Means clustering**, **predictive forecasting**, and **performance ranking** to deliver a complete data analytics experience — right from the terminal.
 
 ---
 
-## ✨ Features
-- 🏪 **Store Data Simulation:** Randomly generates 100 stores with unique IDs, locations, employees, and sales.
-- 👥 **Employee Management:** Assigns managers and staff with salaries.
-- 📦 **Product Handling:** Automatically creates 35 products with SKUs and prices.
-- 📊 **Performance Analytics:**
-  - Calculates total sales, operational cost, and profit.
-  - Generates “Top Performer” and “Bottom Performer” reports.
-- 📈 **Sales Forecasting:**
-  - Predicts sales for upcoming months using moving averages.
-  - Adds seasonal multipliers and confidence levels.
-- 💾 **File I/O Integration:**
-  - Saves data to `UrbanEase_data.txt`
-  - Generates `Performance Report.txt`
-  - Creates future sales report `Future Sales Forecast.txt`
-- 🔁 **Update Functionality:** Allows modification of any store’s manager and monthly cost.
-- ✅ **Memory Management:** Frees dynamically allocated memory for staff members.
+## 🚀 Features
+
+### 🧮 Automated Data Generation
+- Dynamically generates **100 stores** and **35 products** with random values.  
+- Each store has:
+  - Manager and employee data  
+  - Sales records for 24 months (2 years)  
+  - Product details and customer statistics  
+
+### 📊 Smart Analytics
+- **K-Means Clustering:**  
+  Classifies stores into 3 clusters based on:
+  - Total Sales  
+  - Average Sales per Day  
+  - Customer Volume  
+  → Results saved in `Clustered Stores.txt`.
+
+- **Performance Ranking System:**  
+  Evaluates stores based on:
+  - Profit (50%)  
+  - Total Sales (30%)  
+  - Operational Cost (20%)  
+  → Full report saved in `Performance Report.txt`.
+
+- **Future Sales Forecasting:**  
+  Predicts sales trends using:
+  - Moving Average  
+  - Linear Regression (R² Confidence Level)  
+  - Automatic Warning Flags for negative growth  
+  → Output saved in `Future Sales Forecast.txt`.
+
+### 🎨 Visual Representation
+- Displays **ASCII bar charts** of monthly sales trends per store directly in the terminal.
+
+### 🧩 Data Editing
+- Allows users to **update store data** (manager name or monthly cost).  
+- Updates reflect automatically in `UrbanEase_data.txt`.
 
 ---
 
-## 🛠 Installation & Run
+## 🗂️ Generated Files
+
+| File | Description |
+|------|--------------|
+| `UrbanEase_data.txt` | All generated store, employee, and product data |
+| `Clustered Stores.txt` | Results from the K-Means clustering algorithm |
+| `Performance Report.txt` | Ranked list of top and low-performing stores |
+| `Future Sales Forecast.txt` | Forecasted sales, confidence levels, and warnings |
+
+---
+
+## ⚙️ Menu Options
+
+| Option | Description |
+|--------|-------------|
+| `1` | Generate Random Data |
+| `2` | Update Existing Store Details |
+| `3` | Perform K-Means Clustering |
+| `4` | Predict Future Sales |
+| `5` | Generate Performance Report |
+| `6` | Display Monthly Sales Graph |
+| `7` | Exit and Free Memory |
+
+---
+
+## 🧠 Core Concepts Used
+
+- **Object-Oriented Programming**
+  - Struct-based modular data models
+  - Dynamic Memory Allocation (DMA)
+  - File Handling for data persistence  
+- **Data Science Techniques**
+  - K-Means Clustering  
+  - Moving Average Forecasting  
+  - Linear Regression (Confidence Scoring)
+- **Console Visualization**
+  - Text-based bar graphs using ASCII art  
+
+---
+
+## 💻 How to Run
 
 ### Requirements
-- C++ Compiler (e.g., g++, MinGW, or MSVC)
-- Works on Windows, macOS, or Linux (no `windows.h` dependency)
+- Windows OS (for color and console output support)
+- C++ compiler (MinGW, MSVC, or g++ supporting C++98)
 
 ### Steps
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/your-username/UrbanEase-Management-System.git
-   cd UrbanEase-Management-System
+```bash
+git clone https://github.com/your-username/urbanease-analytics.git
+cd urbanease-analytics
+g++ UrbanEase Store Management System.cpp -o urbanease.exe
+urbanease.exe
+```
 
-2. **Compile the source code using a C++ compiler:**
-   
- g++ OOP_Assignment2_24i_3148.cpp -o UrbanEase
+## 🧹 Memory Management
 
-3. Run the program:
-   
-   ./UrbanEase
+All dynamically allocated data — including:
 
-## 🚀 Usage
+Employee arrays
 
-From the main menu, you can:
+Product sales
 
-Generate Data → Creates random store, employee, and sales information.
+Subclusters and Clusters
+— are properly freed before exit, ensuring zero memory leaks.
 
-Update Data → Modify an existing store’s details (manager name or cost).
+## 🏆 Highlights
 
-Print Future Forecast → Predicts next 5 months of sales per store.
+End-to-end simulation of a multi-store retail system
 
-Generate Data Analytic Report → Produces ranking and performance summaries.
+Combines data analytics + business logic
 
-Exit → Closes the program safely and releases memory.
+Cleanly structured, modular, and reusable C++ code
 
-## 📊 Output Files
+Ideal demonstration of OOP + Analytical Programming concepts
 
-UrbanEase_data.txt:	          
-Contains generated store data, employees, and sales.
-
-Performance Report.txt:	      
-Shows top and bottom performing stores.
-
-Future Sales Forecast.txt:	    
-Lists predicted future sales and confidence levels.
-
-## 📜 License
+## 📄 License
 
 This project is licensed under the MIT License.
-You’re free to use, modify, and distribute it.
+You’re free to use, modify, and share it for educational or professional purposes.
 
-## 👤 Author
-
-Made by @Fahadshoaib1068
-
+## ⭐ Developed by: Fahad Shoaib
+📊 UrbanEase — Intelligent Store Analytics System
